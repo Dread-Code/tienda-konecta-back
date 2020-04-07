@@ -36,9 +36,9 @@ class UserController {
     }
 
     async getUserByEmail( req,res ){
-        let {body}= req;
-        console.log(body);
-        const user = await _userService.getUserByEmail( body );
+        let body= req.body;
+        console.log(body.email);
+        const user = await _userService.getUserByEmail( body.email );
         return res.send(user);
     }
 

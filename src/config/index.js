@@ -7,6 +7,10 @@ process.env.APPLICATION_NAME = process.env.APPLICATION_NAME || "BRODDAS API REST
 // enviroment
 process.env.NODE_ENV = process.env.NODE_ENV || "dev"
 
+//
+
+process.env.JWT_SECRET ="hgvyr56rfyg9t8y$$%%&/(/bhygoiuygboy)"
+
 // base de datos
 let urlDB;
 
@@ -26,5 +30,6 @@ module.exports = {
 
     PORT: process.env.PORT,
     MONGO_URI: process.env.urlDB,
-    APPLICATION_NAME: process.env.APPLICATION_NAME
+    APPLICATION_NAME: process.env.APPLICATION_NAME,
+    JWT_SECRET: process.env.JWT_SECRET
 };
