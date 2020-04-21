@@ -3,7 +3,7 @@ const uniqueValidator = require("mongoose-unique-validator");
 const { Schema } = mongoose;
 
 const ProductSchema = new Schema({
-  name: { 
+  productTitle: { 
     type: String, 
     required: true 
   },
@@ -12,15 +12,15 @@ const ProductSchema = new Schema({
     required: true,
     unique: true
   },
-  precio: { 
+  price: { 
     type: Number, 
     required: true 
   },
-  peso: { 
+  weight: { 
     type: Number, 
     required: true 
   },
-  categoria:{
+  category:{
     type:String,
     required: true
   },
@@ -29,12 +29,10 @@ const ProductSchema = new Schema({
     required: true
   },
   date:{
-    type: Date,
-    required: true
+    type: Date
   },
   sellDate:{
-    type: Date,
-    required: true
+    type: Date
   }
 });
 

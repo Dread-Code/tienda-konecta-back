@@ -12,6 +12,7 @@ module.exports = function name({HomeRoutes, ProductRoutes}) {
     const router = express.Router();
     const apiRoutes = express.Router();
 
+    
     //default middlewares
     apiRoutes
     .use(express.json())
@@ -19,6 +20,8 @@ module.exports = function name({HomeRoutes, ProductRoutes}) {
     .use(helmet())
     .use(compression())
     .use(morgan("dev"));
+
+
 
     apiRoutes.use("/home",HomeRoutes);
     apiRoutes.use("/product",ProductRoutes);
