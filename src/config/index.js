@@ -1,25 +1,21 @@
 
 //puerto
-process.env.PORT = process.env.PORT || 3000;
+process.env.PORT = process.env.PORT || 4000;
 //name
-process.env.APPLICATION_NAME = process.env.APPLICATION_NAME || "BRODDAS API REST" 
+process.env.APPLICATION_NAME = process.env.APPLICATION_NAME || "TIENDA KONECTA" 
 
 // enviroment
 process.env.NODE_ENV = process.env.NODE_ENV || "dev"
-
-//
-
-process.env.JWT_SECRET ="hgvyr56rfyg9t8y$$%%&/(/bhygoiuygboy)"
 
 // base de datos
 let urlDB;
 
 if (process.env.NODE_ENV == "dev") {
 
-    urlDB = "mongodb://localhost:27017/broddas";
+    urlDB = "mongodb+srv://lucas:iUgQI6ekkeKTUWts@cluster0-hcdpy.mongodb.net/tiendakonectadev";
 
 } else {
-    urlDB = "mongodb+srv://lucas:iUgQI6ekkeKTUWts@cluster0-hcdpy.mongodb.net/broddas"
+    urlDB = "mongodb+srv://lucas:iUgQI6ekkeKTUWts@cluster0-hcdpy.mongodb.net/tiendakonectaprd";
 }
 
 

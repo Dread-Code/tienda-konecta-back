@@ -1,5 +1,4 @@
 module.exports = {
     HomeRoutes: require("./home.routes"),
-    UserRoutes: require("./user.routes"),
-    AuthRoutes: require("./auth.routes")
+    ProductRoutes: require("./product.routes")
 }

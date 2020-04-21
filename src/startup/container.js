@@ -11,33 +11,30 @@ const app = require(".");
 const {
     HomeService,
     BaseService,
-    UserService,
-    AuthService
+    ProductService,
 } = require("../services");
 
 //Controllers
 const {
     HomeController,
-    UserController,
-    AuthController
+    ProductController
 } = require("../controllers");
 
 //Routes
 const{
     HomeRoutes,
-    UserRoutes,
-    AuthRoutes
+    ProductRoutes
 } = require("../routes/index.routes");
 
 
 //models
 const {
-    User
+    Product
 } = require("../models");
 
 //repositories
 const {
-    UserRepository,
+    ProductRepository,
     BaseRepository
 } = require("../repositories");
 
@@ -51,24 +48,21 @@ container
 .register({
     HomeService: asClass(HomeService).singleton(),
     BaseService: asClass(BaseService).singleton(),
-    UserService: asClass(UserService).singleton(),
-    AuthService: asClass(AuthService).singleton()
+    ProductService: asClass(ProductService).singleton()
 })
 .register({
     HomeController: asClass(HomeController.bind(HomeController)).singleton(),
-    UserController: asClass(UserController.bind(UserController)).singleton(),
-    AuthController: asClass(AuthController.bind(AuthController)).singleton()
+    ProductController: asClass(ProductController.bind(ProductController)).singleton()
 })
 .register({
     HomeRoutes: asFunction(HomeRoutes).singleton(),
-    UserRoutes: asFunction(UserRoutes).singleton(),
-    AuthRoutes: asFunction(AuthRoutes).singleton()
+    ProductRoutes: asFunction(ProductRoutes).singleton()
 })
 .register({
-    User: asValue(User)
+    Product: asValue(Product)
 })
 .register({
-    UserRepository: asClass(UserRepository).singleton(),
+    ProductRepository: asClass(ProductRepository).singleton(),
     BaseRepository: asClass(BaseRepository).singleton()
 });
 
