@@ -5,9 +5,9 @@ module.exports =({ProductController}) =>{
 
     router.post("/create", ProductController.create);
     router.get("", ProductController.getAll);
-    router.get("/:userId", ProductController.get);
-    router.patch("/:userId", ProductController.update);
-    router.delete("/:userId", ProductController.delete);
+    router.get("/:productId", ProductController.get);
+    router.patch("/:productId", ProductController.update);
+    router.delete("/:productId", ProductController.delete);
     
     return router; // No estaba retornando este hpta router .l.
 }

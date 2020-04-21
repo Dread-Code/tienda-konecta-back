@@ -7,31 +7,31 @@ class ProductController {
 
     async get ( req,res  ) {
         let { productId } = req.params;
-        const  product = _productService.get( productId );
+        const  product = await _productService.get( productId );
         return res.send( product );
     }
 
     async getAll (req,res) {
-        const products = _productService.getAll();
+        const products = await _productService.getAll();
         return res.send( products );
     }
 
     async create ( req,res ) {
         let { body } = req;
-        const product = _productService.create( body );
-        return res.send( product );
+        const product = await _productService.create( body );
+        return res.send( product )
     }
 
     async update ( req,res ) {
         let {body} = req;
         let { productId } = req.params;
-        const product = _productService.update( productId, body, { new: true} );
+        const product = await _productService.update( productId, body, { new: true} );
         return res.send(product);
     }
 
     async delete ( req,res ) {
         let { productId } = req.params;
-        const product =  _productService.delete(productId);
+        const product =  await _productService.delete(productId);
         return res.send(product);
     }
 

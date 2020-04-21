@@ -30,12 +30,20 @@ const ProductSchema = new Schema({
   },
   date:{
     type: Date
-  },
-  sellDate:{
-    type: Date
   }
 });
 
+ProductSchema.pre("save", async function(next) {
+  const product = this;
+
+  if (!product.isModified("date")) {
+    return next();
+  }
+
+  const current = new Date()
+  product.date = current;
+  next();
+});
 
 ProductSchema.plug in(uniqueValidator,{
   message: "{PATH} should be unique"
